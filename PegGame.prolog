@@ -62,7 +62,7 @@ display(Sol) :-
  
 display([], Free) :-
 	numlist(1,15, Lst),
-	maplist(\X^I^(member(X, Free) -> I = .; I = X),
+	maplist(\X^I^(member(X, Free) -> I = 0; I = 1),
 		Lst,
 		[I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11,I12,I13,I14,I15]),
 	format('    ~w        ~n', [I1]),
@@ -74,7 +74,7 @@ display([], Free) :-
  
 display([move(Start, Middle, End) | Tail], Free) :-
 	numlist(1,15, Lst),
-	maplist(\X^I^(member(X, Free) -> I = .; I = X),
+	maplist(\X^I^(member(X, Free) -> I = 0; I = 1),
 		Lst,
 		[I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11,I12,I13,I14,I15]),
 	format('    ~w        ~n', [I1]),
